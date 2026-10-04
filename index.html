@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RAYS DELIGHT | Freshly Baked With Love</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff9f5;
+            color: #3d2922;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .navbar {
+            width: 100%;
+            background: #ffffff;
+            padding: 18px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #9b3f65;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3d2922;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #c45a82;
+        }
+
+        .cart-button {
+            background: #9b3f65;
+            color: white !important;
+            padding: 10px 18px;
+            border-radius: 25px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 75vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+            padding: 70px 7%;
+            background: linear-gradient(
+                135deg,
+                #fff5f7,
+                #fff9f5
+            );
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-small {
+            color: #b04c73;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 80px);
+            line-height: 1.05;
+            color: #4b2929;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #a94369;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #6b5550;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            text-decoration: none;
+            background: #9b3f65;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+            background: #7e3050;
+        }
+
+        .hero-image {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-image img:first-child {
+            height: 300px;
+        }
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #b04c73;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 45px;
+            color: #4b2929;
+            margin-top: 8px;
+        }
+
+        .section-title p {
+            margin-top: 12px;
+            color: #725e58;
+            font-size: 17px;
+        }
+
+        /* =========================
+           PRODUCT GRID
+        ========================= */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.13);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 23px;
+            margin-bottom: 8px;
+            color: #4b2929;
+        }
+
+        .product-info p {
+            color: #75635d;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        .order-button {
+            display: inline-block;
+            text-decoration: none;
+            background: #9b3f65;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .order-button:hover {
+            background: #7e3050;
+        }
+
+        /* =========================
+           HOW IT WORKS
+        ========================= */
+
+        .how-it-works {
+            background: #f8e8ed;
+        }
+
+        .steps {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .step {
+            text-align: center;
+            background: white;
+            padding: 30px 20px;
+            border-radius: 20px;
+        }
+
+        .step-number {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            background: #9b3f65;
+            color: white;
+            border-radius: 50%;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .step p {
+            color: #75635d;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #66534d;
+        }
+
+        /* =========================
+           CALL TO ACTION
+        ========================= */
+
+        .cta {
+            margin: 0 7% 80px;
+            padding: 60px 30px;
+            text-align: center;
+            background: #9b3f65;
+            color: white;
+            border-radius: 30px;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #9b3f65;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #3d2922;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #e5d5d0;
+            margin: 7px 0;
+        }
+
+        /* =========================
+           MOBILE NAV
+        ========================= */
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #3d2922;
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text {
+                margin: auto;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                flex-direction: column;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
+                padding: 55px 5%;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .hero-image {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-image img {
+                height: 160px;
+            }
+
+            .hero-image img:first-child {
+                height: 220px;
+            }
+
+            .section {
+                padding: 60px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 35px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card img {
+                height: 230px;
+            }
+
+            .cta {
+                margin: 0 5% 60px;
+                padding: 45px 20px;
+            }
+
+            .cta h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            RAYS DELIGHT
+        </a>
+
+        <button class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="index.html">Home</a>
+
+            <a href="#menu">Menu</a>
+
+            <a href="#about">About</a>
+
+            <a href="#how-it-works">How It Works</a>
+
+            <a href="order.html" class="cart-button">
+                🛒 Order Now
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <div class="hero-small">
+                FRESHLY BAKED • MADE WITH LOVE
+            </div>
+
+            <h1>
+                Sweet moments,
+                <span>beautifully baked.</span>
+            </h1>
+
+            <p>
+                Delicious cakes, cookies and sweet treats
+                made to make your special moments even more memorable.
+            </p>
+
+            <a href="#menu" class="hero-button">
+                Explore Our Menu
+            </a>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img src="images (1).jpg" alt="Freshly baked treat">
+
+            <img src="images (2).jpg" alt="Delicious bakery treat">
+
+            <img src="images (3).jpg" alt="Beautiful baked cake">
+
+            <img src="images (4).jpg" alt="Fresh bakery product">
+            
+            <img  src="images (5).jpg" alt="Fresh bakery product" >
+            
+            <img  src="images (6).jpg" alt="Fresh bakery product" >
+            
+            <img  src="images (7).jpg"  alt="Fresh bakery product" >
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <section class="section" id="menu">
+
+        <div class="section-title">
+
+            <span>OUR MENU</span>
+
+            <h2>Choose Your Favourite</h2>
+
+            <p>
+                From beautiful cakes to delicious cookies,
+                there's something for every sweet moment.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+            <!--  CAKE -->
+
+            <div class="product-card">
+
+                <img
+                    src="images (8).jpg"
+                    alt=" Cake"
+                >
+
+                <div class="product-info">
+
+                    <h3> Cakes</h3>
+
+                    <p>
+                        Soft, delicious and beautifully baked
+                        for every occasion.
+                    </p>
+
+                    <a
+                        href="cake.html"
+                        class="order-button"
+                    >
+                        View & Order
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- MILK COOKIES -->
+
+            <div class="product-card">
+
+                <img
+                    src="images (9).jpg"
+                    alt="Milk Cookies"
+                >
+
+                <div class="product-info">
+
+                    <h3>Milk Cookies</h3>
+
+                    <p>
+                        Deliciously baked cookies perfect
+                        for a sweet treat.
+                    </p>
+
+                    <a
+                        href="milkcookies.html"
+                        class="order-button"
+                    >
+                        View & Order
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SHORTBREAD -->
+
+            <div class="product-card">
+
+                <img
+                    src="image (10).jpg"
+                    alt="Shortbread Cookies"
+                >
+
+                <div class="product-info">
+
+                    <h3>Shortbread Cookies</h3>
+
+                    <p>
+                        Buttery, delicate and deliciously
+                        crisp shortbread cookies.
+                    </p>
+
+                    <a
+                        href="shortbreadcookies.html"
+                        class="order-button"
+                    >
+                        View & Order
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTER COOKIES -->
+
+            <div class="product-card">
+
+                <img
+                    src="images (12).jpg"
+                alt="Butter Cookies"
+                >
+
+                <div class="product-info">
+
+                    <h3>Butter Cookies</h3>
+
+                    <p>
+                        Rich and buttery cookies baked
+                        to perfection.
+                    </p>
+
+                    <a
+                        href="buttercookies.html"
+                        class="order-button"
+                    >
+                        View & Order
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CUPCAKES -->
+
+            <div class="product-card">
+
+                <img
+                    src="images (11).jpg"
+                    alt="Cupcakes"
+                >
+
+                <div class="product-info">
+
+                    <h3>Cupcakes</h3>
+
+                    <p>
+                        Beautiful little treats for parties,
+                        celebrations and everyday joy.
+                    </p>
+
+                    <a
+                        href="cupcakes.html"
+                        class="order-button"
+                    >
+                        View & Order
+                    </a>
+
+                </div>
+
+            </div>
+
+
+           
+
+        
+
+    
+
+<!-- SPONGE CAKE -->
+
+            <div class="product-card">
+
+                <img
+                    src="images (14).jpg"
+                    alt="Sponge Cake"
+                >
+
+                <div class="product-info">
+
+                    <h3>Sponge Cake</h3>
+
+                    <p>
+                        Light, soft and deliciously baked
+                        for your enjoyment.
+                    </p>
+
+                    <a
+                        href="spongecake.html"
+                         class="order-button"
+                    >
+                        View & Order
+                    </a>
+
+                </div>
+
+            </div>
+
+        
+
+        
+
+            <!--chocolatechip cookies-->    
+             <div class="product-card">
+
+                
+
+                <img
+                    src="chocolate chip.jpg"
+                    alt="CHOCOLATE CHIP COOKIES"
+                >
+   
+
+
+                <div class="product-info">
+
+                    <h3>ChocolateChip Cookies</h3>
+
+                    <p>
+                        Crispy,golden cookies packed with 
+                        delicious chocolate chips in every bite.
+                
+                    </p>
+
+                    <a
+                        href="chocolatechipcookies.html"
+                         class="order-button"
+                    >
+                        View & Order
+                    </a>
+
+                </div>
+
+            </div>
+            <!--Savory snacks-->    
+             <div class="product-card">
+
+                
+
+                <img
+                    src="savory sacks.jpg"
+                    alt="Savoury snacks"
+                >
+   
+
+
+                <div class="product-info">
+
+                    <h3>Savoury snacks</h3>
+
+                    <p>
+                        Indulge yourself in our snacks like eggroll,
+                        samosas,puff-puff,meat pie etc.
+                        
+                
+                    </p>
+
+                    <a
+                        href="savourysnacks.html"
+                         class="order-button"
+                    >
+                        View & Order
+                    </a>
+
+                </div>
+
+            </div>
+<!--Double chocolate cookies-->    
+             <div class="product-card">
+
+                
+
+                <img
+                    src="double chocolate cookies.jpg"
+                    alt="Double chocolate cookies"
+                >
+   
+
+
+                <div class="product-info">
+
+                    <h3>Double chocolate cookies</h3>
+
+                    <p>
+                        Double the chocolate,double the indulgence
+                        ,every bite is pure bliss.
+                        
+                        
+                
+                    </p>
+
+                    <a
+                        href="doublechocolatecookies.html"
+                         class="order-button"
+                    >
+                        View & Order
+                    </a>
+
+                </div>
+
+            </div>
+            <!--cocunut cookies-->    
+             <div class="product-card">
+
+                
+
+                <img
+                    src="coconut cookies.jpg"
+                    alt="Coconut COOKIES"
+                >
+   
+
+
+                <div class="product-info">
+
+                    <h3>Coconut Cookies</h3>
+
+                    <p>
+                        Crispy,golden and delightfully coc0nutty,pure
+                        tropical goodness in every bite.  
+                        
+                
+                    </p>
+
+                    <a
+                        href="coconutcookies.html"
+                         class="order-button"
+                    >
+                        View & Order
+                    </a>
+
+                </div>
+
+            </div>
+
+        
+
+    </section>
+    <!-- =========================
+         HOW IT WORKS
+    ========================== -->
+
+
+    <section
+        class="section how-it-works"
+        id="how-it-works"
+    >
+
+        <div class="section-title">
+
+            <span>SIMPLE & EASY</span>
+
+            <h2>How It Works</h2>
+
+            <p>
+                Getting your favourite treats is easy.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>Choose</h3>
+
+                <p>
+                    Browse our delicious selection
+                    and choose what you'd like.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>Order</h3>
+
+                <p>
+                    Add your favourite treats to your
+                    order and provide your details.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>Enjoy</h3>
+
+                <p>
+                    Sit back and look forward to
+                    your freshly baked treats.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section
+        class="section"
+        id="about"
+    >
+
+        <div class="section-title">
+
+            <span>ABOUT US</span>
+
+            <h2>Made With Love</h2>
+
+        </div>
+
+        <div class="about">
+
+            <p>
+                At RAYS DELIGHT, we believe that every
+                celebration deserves something delicious.
+                We create freshly baked cakes, cookies
+                and sweet treats with care, attention
+                to detail and lots of love.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CALL TO ACTION
+    ========================== -->
+
+    <section class="cta">
+
+        <h2>
+            Ready for something delicious?
+        </h2>
+
+        <p>
+            Browse our menu and place your order today.
+        </p>
+
+        <a
+            
