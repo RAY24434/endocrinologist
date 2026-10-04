@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>RAYS DELIGHT | Freshly Baked With Love</title>
+    <title>Dr. Yakubu Lawal | Consultant Endocrinologist</title>
+
+    <meta name="description"
+          content="Professional website of Dr. Yakubu Lawal, Consultant Endocrinologist specialising in diabetes, thyroid disorders,endocrine disorders, obesity, hormonal disorders and metabolic health.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
 
     <style>
+
+        /* =========================
+           RESET
+        ========================== */
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -19,555 +32,1260 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #fff9f5;
-            color: #3d2922;
+            font-family: "DM Sans", sans-serif;
+            color: #18333a;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
+
+        :root {
+            --navy: #123b46;
+            --deep-navy: #092b34;
+            --teal: #197c83;
+            --light-teal: #e9f6f5;
+            --cream: #f8f6f1;
+            --gold: #c7a66a;
+            --text: #18333a;
+            --muted: #687b80;
+            --white: #ffffff;
+            --border: #dce7e7;
+        }
+
+        .container {
+            width: min(1160px, 90%);
+            margin: auto;
+        }
+
+        /* =========================
+           TOP BAR
+        ========================== */
+
+        .top-bar {
+            background: var(--deep-navy);
+            color: white;
+            padding: 9px 0;
+            font-size: 13px;
+        }
+
+        .top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-left,
+        .top-right {
+            display: flex;
+            gap: 25px;
+            align-items: center;
         }
 
         /* =========================
            NAVIGATION
-        ========================= */
+        ========================== */
 
-        .navbar {
-            width: 100%;
-            background: #ffffff;
-            padding: 18px 6%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        header {
+            background: white;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 18px rgba(0,0,0,0.06);
+        }
+
+        nav {
+            height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #9b3f65;
-            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-symbol {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--teal);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .logo-text strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 19px;
+            color: var(--navy);
+        }
+
+        .logo-text span {
+            font-size: 10px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 27px;
             align-items: center;
+            list-style: none;
         }
 
         .nav-links a {
-            text-decoration: none;
-            color: #3d2922;
-            font-weight: bold;
+            font-size: 14px;
+            font-weight: 600;
+            color: #3b555b;
             transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: #c45a82;
+            color: var(--teal);
         }
 
-        .cart-button {
-            background: #9b3f65;
+        .nav-btn {
+            background: var(--teal);
             color: white !important;
-            padding: 10px 18px;
-            border-radius: 25px;
+            padding: 12px 20px;
+            border-radius: 5px;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: var(--navy);
+            cursor: pointer;
         }
 
         /* =========================
            HERO
-        ========================= */
+        ========================== */
 
         .hero {
-            min-height: 75vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            min-height: 690px;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8,42,51,0.98) 0%,
+                    rgba(8,42,51,0.88) 45%,
+                    rgba(8,42,51,0.25) 100%
+                ),
+               
+                center/cover;
+
+            display: flex;
             align-items: center;
-            gap: 40px;
-            padding: 70px 7%;
-            background: linear-gradient(
-                135deg,
-                #fff5f7,
-                #fff9f5
-            );
-        }
-
-        .hero-text {
-            max-width: 600px;
-        }
-
-        .hero-small {
-            color: #b04c73;
-            font-size: 18px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 6vw, 80px);
-            line-height: 1.05;
-            color: #4b2929;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #a94369;
-        }
-
-        .hero p {
-            font-size: 20px;
-            line-height: 1.7;
-            color: #6b5550;
-            margin-bottom: 30px;
-        }
-
-        .hero-button {
-            display: inline-block;
-            text-decoration: none;
-            background: #9b3f65;
             color: white;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.3s;
         }
 
-        .hero-button:hover {
-            transform: translateY(-3px);
-            background: #7e3050;
+        .hero-content {
+            max-width: 670px;
         }
 
-        .hero-image {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 25px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-        }
-
-        .hero-image img:first-child {
-            height: 300px;
-        }
-
-        /* =========================
-           SECTION TITLE
-        ========================= */
-
-        .section {
-            padding: 80px 7%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title span {
-            color: #b04c73;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .section-title h2 {
-            font-size: 45px;
-            color: #4b2929;
-            margin-top: 8px;
-        }
-
-        .section-title p {
-            margin-top: 12px;
-            color: #725e58;
-            font-size: 17px;
-        }
-
-        /* =========================
-           PRODUCT GRID
-        ========================= */
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.13);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-info h3 {
-            font-size: 23px;
-            margin-bottom: 8px;
-            color: #4b2929;
-        }
-
-        .product-info p {
-            color: #75635d;
-            line-height: 1.5;
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gold);
             margin-bottom: 18px;
         }
 
-        .order-button {
-            display: inline-block;
-            text-decoration: none;
-            background: #9b3f65;
-            color: white;
-            padding: 11px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: 0.3s;
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(45px, 6vw, 72px);
+            line-height: 1.05;
+            margin-bottom: 24px;
         }
 
-        .order-button:hover {
-            background: #7e3050;
+        .hero h1 span {
+            color: #b8dedb;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 18px;
+            color: #e4eeee;
+            margin-bottom: 34px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #12676d;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.7);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--navy);
         }
 
         /* =========================
-           HOW IT WORKS
-        ========================= */
+           QUICK INFO
+        ========================== */
 
-        .how-it-works {
-            background: #f8e8ed;
+        .quick-info {
+            margin-top: 15px;
+            position: relative;
+            z-index: 5;
         }
 
-        .steps {
-            max-width: 1100px;
-            margin: auto;
+        .quick-grid {
+            background: white;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.09);
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            border-radius: 6px;
+            overflow: hidden;
         }
 
-        .step {
-            text-align: center;
-            background: white;
-            padding: 30px 20px;
-            border-radius: 20px;
-        }
-
-        .step-number {
-            width: 55px;
-            height: 55px;
+        .quick-item {
+            padding: 27px;
             display: flex;
+            gap: 15px;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 18px;
-            background: #9b3f65;
-            color: white;
+            border-right: 1px solid var(--border);
+        }
+
+        .quick-item:last-child {
+            border-right: none;
+        }
+
+        .quick-icon {
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            font-size: 22px;
-            font-weight: bold;
+            background: var(--light-teal);
+            color: var(--teal);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
         }
 
-        .step h3 {
-            margin-bottom: 10px;
-            font-size: 21px;
+        .quick-item strong {
+            display: block;
+            font-size: 14px;
+            color: var(--navy);
         }
 
-        .step p {
-            color: #75635d;
-            line-height: 1.5;
+        .quick-item span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================
+           GENERAL SECTION
+        ========================== */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-heading {
+            max-width: 650px;
+            margin-bottom: 50px;
+        }
+
+        .section-heading.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .section-heading .eyebrow {
+            color: var(--teal);
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+            color: var(--navy);
+            font-size: clamp(34px, 4vw, 48px);
+            line-height: 1.15;
+            margin-bottom: 17px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
         }
 
         /* =========================
            ABOUT
-        ========================= */
+        ========================== */
 
         .about {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
+            background: var(--cream);
         }
 
-        .about p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #66534d;
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .doctor-image {
+            position: relative;
+        }
+
+        .doctor-image img {
+            width: 100%;
+            height: 570px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .experience-card {
+            position: absolute;
+            right: 10px;
+            bottom: 35px;
+            background: white;
+            padding: 25px;
+            width: 185px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .experience-card strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 38px;
+            color: var(--teal);
+        }
+
+        .experience-card span {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .about-text h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            color: var(--navy);
+            margin-bottom: 18px;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .credentials {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 28px;
+        }
+
+        .credential {
+            padding: 15px;
+            border-left: 3px solid var(--teal);
+            background: white;
+        }
+
+        .credential strong {
+            display: block;
+            font-size: 13px;
+            color: var(--navy);
+        }
+
+        .credential span {
+            color: var(--muted);
+            font-size: 12px;
         }
 
         /* =========================
-           CALL TO ACTION
-        ========================= */
+           EXPERTISE
+        ========================== */
 
-        .cta {
-            margin: 0 7% 80px;
-            padding: 60px 30px;
-            text-align: center;
-            background: #9b3f65;
-            color: white;
-            border-radius: 30px;
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
 
-        .cta h2 {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            font-size: 18px;
-            margin-bottom: 25px;
-        }
-
-        .cta-button {
-            display: inline-block;
+        .expertise-card {
+            padding: 32px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
             background: white;
-            color: #9b3f65;
-            padding: 14px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border-color: transparent;
+        }
+
+        .expertise-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 5px;
+            background: var(--light-teal);
+            color: var(--teal);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            margin-bottom: 22px;
+        }
+
+        .expertise-card h3 {
+            font-family: "Playfair Display", serif;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-size: 23px;
+        }
+
+        .expertise-card p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* =========================
+           CONDITIONS
+        ========================== */
+
+        .conditions {
+            background: var(--deep-navy);
+            color: white;
+        }
+
+        .conditions .section-heading h2 {
+            color: white;
+        }
+
+        .conditions .section-heading p {
+            color: #b7cacc;
+        }
+
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .condition {
+            border: 1px solid rgba(255,255,255,0.13);
+            padding: 22px;
+            transition: 0.3s;
+        }
+
+        .condition:hover {
+            background: rgba(255,255,255,0.06);
+        }
+
+        .condition span {
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .condition h3 {
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        /* =========================
+           SERVICES
+        ========================== */
+
+        .services {
+            background: #f8faf9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .service {
+            background: white;
+            padding: 32px;
+            display: flex;
+            gap: 22px;
+            border: 1px solid var(--border);
+        }
+
+        .service-number {
+            color: var(--teal);
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+        }
+
+        .service h3 {
+            color: var(--navy);
+            margin-bottom: 7px;
+        }
+
+        .service p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           PUBLICATIONS
+        ========================== */
+
+        .publication-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .publication {
+            border: 1px solid var(--border);
+            padding: 28px;
+        }
+
+        .publication-date {
+            color: var(--teal);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .publication h3 {
+            font-family: "Playfair Display", serif;
+            color: var(--navy);
+            margin: 15px 0;
+            font-size: 21px;
+        }
+
+        .publication p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .read-more {
+            color: var(--teal);
+            display: inline-block;
+            margin-top: 18px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+        /* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 340px;
+    position: relative;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 54, 68, 0.97),
+            rgba(4, 96, 111, 0.82),
+            rgba(2, 71, 86, 0.5)
+        ),
+        url("https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    display: block;
+    color: var(--teal);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    margin-bottom: 7px;
+}
+
+.eyebrow.light {
+    color: #a9e5e5;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 5vw, 58px);
+    margin-bottom: 8px;
+}
+
+.hero p {
+    max-width: 540px;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+.publication-count {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 28px;
+}
+
+.document-icon {
+    font-size: 34px;
+}
+
+.publication-count strong {
+    display: block;
+    font-size: 23px;
+}
+
+.publication-count span {
+    display: block;
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESEARCH PROFILE
+========================= */
+
+.research-profile {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0 40px;
+    display: grid;
+    /* grid-template-columns: 205px 1fr; */
+    gap: 35px;
+    align-items: center;
+}
+
+
+
+.research-text h2 {
+    font-size: 29px;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.research-text > p {
+    max-width: 760px;
+    color: #516873;
+    font-size: 14px;
+}
+
+.research-topics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 22px;
+}
+
+.topic {
+    display: flex;
+    gap: 12px;
+}
+
+.topic-icon {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--light-teal);
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topic h4 {
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.topic p {
+    color: var(--muted);
+    font-size: 11px;
+}
+/* =========================
+   PUBLICATIONS
+========================= */
+
+.publications {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 60px;
+}
+
+.section-heading {
+    /*display: flex;*/
+    /* justify-content: space-between; */
+   /* gap: 30px;*/
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 28px;
+    color: var(--navy);
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 600px;
+}
+
+.publication-controls {
+    display: grid;
+   /* grid-template-columns: 1fr 160px;*/
+    gap: 10px;
+    min-width: 370px;
+}
+
+
+
+
+
+/* =========================
+   PUBLICATION ITEM
+========================= */
+
+.publication {
+    min-height: 105px;
+    border-top: 1px solid var(--border);
+    display: grid;
+    
+    gap: 17px;
+    align-items: center;
+}
+
+
+
+.publication-info h3 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--navy);
+}
+
+
+
+
+
+
+
+
+.arrow-btn {
+    border: none;
+    background: blue;
+    color: black;
+    font-size: 21px;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 5px 10px;
+}
+
+.publication.hidden {
+    display: none;
+}
+
+
+
+
+
+        /* =========================
+           TESTIMONIALS
+        ========================== */
+
+        .testimonials {
+            background: var(--cream);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+        }
+
+        .stars {
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+
+        .testimonial p {
+            color: #52686d;
+            font-size: 14px;
+            font-style: italic;
+            margin-bottom: 22px;
+        }
+
+        .patient {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 13px;
+        }
+
+        /* =========================
+           APPOINTMENT
+        ========================== */
+
+        .appointment {
+            background:
+                linear-gradient(
+                    100deg,
+                    rgba(8,42,51,0.96),
+                    rgba(17,99,105,0.92)
+                );
+            color: white;
+        }
+
+        .appointment-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .appointment h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 47px;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .appointment-text p {
+            color: #d5e7e6;
+            margin-bottom: 30px;
+        }
+
+        .contact-mini {
+            margin-top: 25px;
+        }
+
+        .contact-mini div {
+            margin-bottom: 12px;
+            color: #d5e7e6;
+        }
+
+        
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-box {
+            padding: 25px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-box strong {
+            display: block;
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .contact-box span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .map {
+            min-height: 350px;
+            background:
+                linear-gradient(
+                    rgba(18,59,70,0.75),
+                    rgba(18,59,70,0.75)
+                ),
+                url("https://images.unsplash.com/photo-1577086664693-894d2b2b1b5e?auto=format&fit=crop&w=1200&q=80")
+                center/cover;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .map h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
         }
 
         /* =========================
            FOOTER
-        ========================= */
+        ========================== */
 
         footer {
-            background: #3d2922;
+            background: #061f26;
             color: white;
-            text-align: center;
-            padding: 35px 20px;
+            padding: 65px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 50px;
         }
 
         footer h3 {
-            font-size: 25px;
-            margin-bottom: 10px;
+            font-family: "Playfair Display", serif;
+            margin-bottom: 17px;
         }
 
         footer p {
-            color: #e5d5d0;
-            margin: 7px 0;
+            color: #9db1b5;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 9px;
+        }
+
+        .footer-links a {
+            color: #9db1b5;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 22px;
+            color: #71898e;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
         }
 
         /* =========================
-           MOBILE NAV
-        ========================= */
+           TOAST
+        ========================== */
 
-        .menu-toggle {
-            display: none;
-            font-size: 28px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: #3d2922;
+        .toast {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--navy);
+            color: white;
+            padding: 16px 22px;
+            border-radius: 5px;
+            transform: translateY(120px);
+            opacity: 0;
+            transition: 0.4s;
+            z-index: 2000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         /* =========================
-           TABLET
-        ========================= */
+           RESPONSIVE
+        ========================== */
 
-        @media (max-width: 900px) {
-
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text {
-                margin: auto;
-            }
-
-            .products {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .steps {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 650px) {
-
-            .navbar {
-                padding: 15px 5%;
-            }
-
-            .logo {
-                font-size: 22px;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
+        @media (max-width: 950px) {
 
             .nav-links {
-                display: none;
                 position: absolute;
-                top: 70px;
+                top: 82px;
                 left: 0;
-                width: 100%;
+                right: 0;
                 background: white;
-                padding: 20px;
                 flex-direction: column;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                padding: 25px;
+                gap: 20px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+                display: none;
             }
 
             .nav-links.active {
                 display: flex;
             }
 
-            .hero {
-                padding: 55px 5%;
+            .menu-btn {
+                display: block;
             }
 
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            .hero-image {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .hero-image img {
-                height: 160px;
-            }
-
-            .hero-image img:first-child {
-                height: 220px;
-            }
-
-            .section {
-                padding: 60px 5%;
-            }
-
-            .section-title h2 {
-                font-size: 35px;
-            }
-
-            .products {
+            .quick-grid {
                 grid-template-columns: 1fr;
             }
 
-            .product-card img {
-                height: 230px;
+            .quick-item {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
             }
 
-            .cta {
-                margin: 0 5% 60px;
-                padding: 45px 20px;
+            .about-grid,
+            .appointment-grid {
+                grid-template-columns: 1fr;
             }
 
-            .cta h2 {
-                font-size: 32px;
+            .doctor-image {
+                max-width: 650px;
+                margin: auto;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .conditions-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .publication-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
+
+        @media (max-width: 650px) {
+
+            .top-bar {
+                display: none;
+            }
+
+            nav {
+                height: 72px;
+            }
+
+            .hero {
+                min-height: 620px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .expertise-grid,
+            .conditions-grid,
+            .services-grid,
+            .publication-grid,
+            .testimonial-grid,
+            .contact-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .credentials,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .experience-card {
+                right: 15px;
+            }
+
+            .copyright {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
     <!-- =========================
-         NAVIGATION
+         TOP BAR
     ========================== -->
 
-    <nav class="navbar">
+    <div class="top-bar">
 
-        <a href="index.html" class="logo">
-            RAYS DELIGHT
-        </a>
+        <div class="container top-content">
 
-        <button class="menu-toggle" onclick="toggleMenu()">
-            ☰
-        </button>
+            <div class="top-left">
+                <span>📍 Gwagwalada, Abuja, Nigeria</span>
+                <span>✉ lawalyaqub2006@yahoo.com</span>
+            </div>
 
-        <div class="nav-links" id="navLinks">
-
-            <a href="index.html">Home</a>
-
-            <a href="#menu">Menu</a>
-
-            <a href="#about">About</a>
-
-            <a href="#how-it-works">How It Works</a>
-
-            <a href="order.html" class="cart-button">
-                🛒 Order Now
-            </a>
+            <div class="top-right">
+                <span>Mon – Fri: 9:00 AM – 5:00 PM</span>
+            </div>
 
         </div>
 
-    </nav>
+    </div>
 
 
     <!-- =========================
-         HERO SECTION
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <div class="container">
+
+            <nav>
+
+                <a href="#" class="logo">
+
+                    <div class="logo-symbol">
+                        YL
+                    </div>
+
+                    <div class="logo-text">
+                        <strong>Dr. Yakubu Lawal</strong>
+                        <span>Consultant Endocrinologist</span>
+                    </div>
+
+                </a>
+
+
+                <button class="menu-btn" id="menuBtn">
+                    ☰
+                </button>
+
+
+                <ul class="nav-links" id="navLinks">
+
+                    <li><a href="#about">About</a></li>
+
+                    <li><a href="#expertise">Expertise</a></li>
+
+                    <li><a href="#services">Services</a></li>
+
+                    <li><a href="#research">Research</a></li>
+
+                    <li><a href="#contact">Contact</a></li>
+
+                    <li>
+                        <a href="#appointment" class="nav-btn">
+                            Book Appointment
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
     ========================== -->
 
     <section class="hero">
 
-        <div class="hero-text">
+        <div class="container">
 
-            <div class="hero-small">
-                FRESHLY BAKED • MADE WITH LOVE
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    Endocrinology • Diabetes • Metabolic Health
+                </div>
+
+                <h1>
+                    Understanding your
+                    <span>hormones.</span>
+                    Improving your health.
+                </h1>
+
+                <p>
+                    Personalised specialist care for diabetes, thyroid
+                    disorders, hormonal conditions and metabolic health —
+                    grounded in evidence and centred around the individual.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#appointment" class="btn btn-primary">
+                        Book a Consultation
+                    </a>
+
+                    <a href="#about" class="btn btn-outline">
+                        Meet Dr. Yakubu Lawal
+                    </a>
+
+                </div>
+
             </div>
-
-            <h1>
-                Sweet moments,
-                <span>beautifully baked.</span>
-            </h1>
-
-            <p>
-                Delicious cakes, cookies and sweet treats
-                made to make your special moments even more memorable.
-            </p>
-
-            <a href="#menu" class="hero-button">
-                Explore Our Menu
-            </a>
-
-        </div>
-
-
-        <div class="hero-image">
-
-            <img src="images (1).jpg" alt="Freshly baked treat">
-
-            <img src="images (2).jpg" alt="Delicious bakery treat">
-
-            <img src="images (3).jpg" alt="Beautiful baked cake">
-
-            <img src="images (4).jpg" alt="Fresh bakery product">
-            
-            <img  src="images (5).jpg" alt="Fresh bakery product" >
-            
-            <img  src="images (6).jpg" alt="Fresh bakery product" >
-            
-            <img  src="images (7).jpg"  alt="Fresh bakery product" >
 
         </div>
 
@@ -575,455 +1293,138 @@
 
 
     <!-- =========================
-         MENU
+         QUICK INFORMATION
     ========================== -->
 
-    <section class="section" id="menu">
+    <div class="quick-info">
 
-        <div class="section-title">
+        <div class="container">
 
-            <span>OUR MENU</span>
+            <div class="quick-grid">
 
-            <h2>Choose Your Favourite</h2>
+                <div class="quick-item">
 
-            <p>
-                From beautiful cakes to delicious cookies,
-                there's something for every sweet moment.
-            </p>
+                    <div class="quick-icon">⌚</div>
 
-        </div>
-
-
-        <div class="products">
-
-            <!--  CAKE -->
-
-            <div class="product-card">
-
-                <img
-                    src="images (8).jpg"
-                    alt=" Cake"
-                >
-
-                <div class="product-info">
-
-                    <h3> Cakes</h3>
-
-                    <p>
-                        Soft, delicious and beautifully baked
-                        for every occasion.
-                    </p>
-
-                    <a
-                        href="cake.html"
-                        class="order-button"
-                    >
-                        View & Order
-                    </a>
+                    <div>
+                        <strong>Consultation Hours</strong>
+                        <span>Mon – Fri, 9:00 AM – 5:00 PM</span>
+                    </div>
 
                 </div>
 
-            </div>
 
+                <div class="quick-item">
 
-            <!-- MILK COOKIES -->
+                    <div class="quick-icon">📍</div>
 
-            <div class="product-card">
-
-                <img
-                    src="images (9).jpg"
-                    alt="Milk Cookies"
-                >
-
-                <div class="product-info">
-
-                    <h3>Milk Cookies</h3>
-
-                    <p>
-                        Deliciously baked cookies perfect
-                        for a sweet treat.
-                    </p>
-
-                    <a
-                        href="milkcookies.html"
-                        class="order-button"
-                    >
-                        View & Order
-                    </a>
+                    <div>
+                        <strong>Clinic Location</strong>
+                        <span>University of Abuja teaching hospital, Gwagwalada, Abuja, Nigeria.</span>
+                    </div>
 
                 </div>
 
-            </div>
 
+                <div class="quick-item">
 
-            <!-- SHORTBREAD -->
+                    <div class="quick-icon">☎</div>
 
-            <div class="product-card">
-
-                <img
-                    src="image (10).jpg"
-                    alt="Shortbread Cookies"
-                >
-
-                <div class="product-info">
-
-                    <h3>Shortbread Cookies</h3>
-
-                    <p>
-                        Buttery, delicate and deliciously
-                        crisp shortbread cookies.
-                    </p>
-
-                    <a
-                        href="shortbreadcookies.html"
-                        class="order-button"
-                    >
-                        View & Order
-                    </a>
+                    <div>
+                        <strong>Appointments</strong>
+                        <span>+234 703 640 0028</span>
+                    </div>
 
                 </div>
-
-            </div>
-
-
-            <!-- BUTTER COOKIES -->
-
-            <div class="product-card">
-
-                <img
-                    src="images (12).jpg"
-                alt="Butter Cookies"
-                >
-
-                <div class="product-info">
-
-                    <h3>Butter Cookies</h3>
-
-                    <p>
-                        Rich and buttery cookies baked
-                        to perfection.
-                    </p>
-
-                    <a
-                        href="buttercookies.html"
-                        class="order-button"
-                    >
-                        View & Order
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- CUPCAKES -->
-
-            <div class="product-card">
-
-                <img
-                    src="images (11).jpg"
-                    alt="Cupcakes"
-                >
-
-                <div class="product-info">
-
-                    <h3>Cupcakes</h3>
-
-                    <p>
-                        Beautiful little treats for parties,
-                        celebrations and everyday joy.
-                    </p>
-
-                    <a
-                        href="cupcakes.html"
-                        class="order-button"
-                    >
-                        View & Order
-                    </a>
-
-                </div>
-
-            </div>
-
-
-           
-
-        
-
-    
-
-<!-- SPONGE CAKE -->
-
-            <div class="product-card">
-
-                <img
-                    src="images (14).jpg"
-                    alt="Sponge Cake"
-                >
-
-                <div class="product-info">
-
-                    <h3>Sponge Cake</h3>
-
-                    <p>
-                        Light, soft and deliciously baked
-                        for your enjoyment.
-                    </p>
-
-                    <a
-                        href="spongecake.html"
-                         class="order-button"
-                    >
-                        View & Order
-                    </a>
-
-                </div>
-
-            </div>
-
-        
-
-        
-
-            <!--chocolatechip cookies-->    
-             <div class="product-card">
-
-                
-
-                <img
-                    src="chocolate chip.jpg"
-                    alt="CHOCOLATE CHIP COOKIES"
-                >
-   
-
-
-                <div class="product-info">
-
-                    <h3>ChocolateChip Cookies</h3>
-
-                    <p>
-                        Crispy,golden cookies packed with 
-                        delicious chocolate chips in every bite.
-                
-                    </p>
-
-                    <a
-                        href="chocolatechipcookies.html"
-                         class="order-button"
-                    >
-                        View & Order
-                    </a>
-
-                </div>
-
-            </div>
-            <!--Savory snacks-->    
-             <div class="product-card">
-
-                
-
-                <img
-                    src="savory sacks.jpg"
-                    alt="Savoury snacks"
-                >
-   
-
-
-                <div class="product-info">
-
-                    <h3>Savoury snacks</h3>
-
-                    <p>
-                        Indulge yourself in our snacks like eggroll,
-                        samosas,puff-puff,meat pie etc.
-                        
-                
-                    </p>
-
-                    <a
-                        href="savourysnacks.html"
-                         class="order-button"
-                    >
-                        View & Order
-                    </a>
-
-                </div>
-
-            </div>
-<!--Double chocolate cookies-->    
-             <div class="product-card">
-
-                
-
-                <img
-                    src="double chocolate cookies.jpg"
-                    alt="Double chocolate cookies"
-                >
-   
-
-
-                <div class="product-info">
-
-                    <h3>Double chocolate cookies</h3>
-
-                    <p>
-                        Double the chocolate,double the indulgence
-                        ,every bite is pure bliss.
-                        
-                        
-                
-                    </p>
-
-                    <a
-                        href="doublechocolatecookies.html"
-                         class="order-button"
-                    >
-                        View & Order
-                    </a>
-
-                </div>
-
-            </div>
-            <!--cocunut cookies-->    
-             <div class="product-card">
-
-                
-
-                <img
-                    src="coconut cookies.jpg"
-                    alt="Coconut COOKIES"
-                >
-   
-
-
-                <div class="product-info">
-
-                    <h3>Coconut Cookies</h3>
-
-                    <p>
-                        Crispy,golden and delightfully coc0nutty,pure
-                        tropical goodness in every bite.  
-                        
-                
-                    </p>
-
-                    <a
-                        href="coconutcookies.html"
-                         class="order-button"
-                    >
-                        View & Order
-                    </a>
-
-                </div>
-
-            </div>
-
-        
-
-    </section>
-    <!-- =========================
-         HOW IT WORKS
-    ========================== -->
-
-
-    <section
-        class="section how-it-works"
-        id="how-it-works"
-    >
-
-        <div class="section-title">
-
-            <span>SIMPLE & EASY</span>
-
-            <h2>How It Works</h2>
-
-            <p>
-                Getting your favourite treats is easy.
-            </p>
-
-        </div>
-
-
-        <div class="steps">
-
-            <div class="step">
-
-                <div class="step-number">
-                    1
-                </div>
-
-                <h3>Choose</h3>
-
-                <p>
-                    Browse our delicious selection
-                    and choose what you'd like.
-                </p>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="step-number">
-                    2
-                </div>
-
-                <h3>Order</h3>
-
-                <p>
-                    Add your favourite treats to your
-                    order and provide your details.
-                </p>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="step-number">
-                    3
-                </div>
-
-                <h3>Enjoy</h3>
-
-                <p>
-                    Sit back and look forward to
-                    your freshly baked treats.
-                </p>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
 
     <!-- =========================
          ABOUT
     ========================== -->
 
-    <section
-        class="section"
-        id="about"
-    >
+    <section class="about" id="about">
 
-        <div class="section-title">
+        <div class="container">
 
-            <span>ABOUT US</span>
+            <div class="about-grid">
 
-            <h2>Made With Love</h2>
+                <div class="experience-card">
 
-        </div>
+                        <strong>21+</strong>
 
-        <div class="about">
+                        <span>
+                            Years of clinical and academic experience
+                        </span>
 
-            <p>
-                At RAYS DELIGHT, we believe that every
-                celebration deserves something delicious.
-                We create freshly baked cakes, cookies
-                and sweet treats with care, attention
-                to detail and lots of love.
-            </p>
+                    </div>
+
+                </div>
+
+
+                <div class="about-text">
+
+                    <div class="eyebrow">
+                        About the Doctor
+                    </div>
+
+                    <h3>
+                        Specialist care with a thoughtful,
+                        patient-centred approach.
+                    </h3>
+
+                    <p>
+                        Dr. Yakubu Lawal is a Consultant Endocrinologist
+                        dedicated to helping patients understand complex
+                        hormonal and metabolic conditions.
+                    </p>
+
+                    <p>
+                        His practice combines evidence-based medicine,
+                        careful diagnosis and personalised treatment plans
+                        designed around each patient's circumstances,
+                        goals and long-term wellbeing.
+                    </p>
+
+                    <p>
+                        He has a particular interest in diabetes care and management,
+                        thyroid disorders,endocrine disorders, obesity medicine and metabolic
+                        health.
+                    </p>
+
+
+                    <div class="credentials">
+
+                        <div class="credential">
+                            <strong>MBBS</strong>
+                            <span>Medicine & Surgery</span>
+                        </div>
+
+                        <div class="credential">
+                            <strong>FWACP</strong>
+                            <span>Internal Medicine</span>
+                        </div>
+
+                        <div class="credential">
+                            <strong>Endocrinology</strong>
+                            <span>Sub-specialist Training</span>
+                        </div>
+
+                        <div class="credential">
+                            <strong>Research</strong>
+                            <span>Clinical & Academic Work</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -1031,18 +1432,1116 @@
 
 
     <!-- =========================
-         CALL TO ACTION
+         EXPERTISE
     ========================== -->
 
-    <section class="cta">
+    <section id="expertise">
+
+        <div class="container">
+
+            <div class="section-heading center">
+
+                <div class="eyebrow">
+                    Areas of Expertise
+                </div>
+
+                <h2>
+                    Specialised endocrine care and management
+                </h2>
+
+                <p>
+                    Comprehensive evaluation and management of hormonal,
+                    metabolic and endocrine conditions.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-grid">
+
+                <div class="expertise-card">
+
+                    <div class="expertise-icon">◉</div>
+
+                    <h3>Diabetes Care</h3>
+
+                    <p>
+                        Individualised management of type 1 and type 2
+                        diabetes, including glucose monitoring,
+                        medication optimisation and complication prevention.
+                    </p>
+
+                </div>
+
+
+                <div class="expertise-card">
+
+                    <div class="expertise-icon">◆</div>
+
+                    <h3>Thyroid Disorders</h3>
+
+                    <p>
+                        Assessment and treatment of thyroid conditions
+                        including hypothyroidism, hyperthyroidism,
+                        thyroid nodules and thyroid dysfunction.
+                    </p>
+
+                </div>
+
+
+                <div class="expertise-card">
+
+                    <div class="expertise-icon">◇</div>
+
+                    <h3>Obesity & Metabolism</h3>
+
+                    <p>
+                        Evidence-based approaches to weight management,
+                        metabolic health and obesity-related conditions.
+                    </p>
+
+                </div>
+
+
+                <div class="expertise-card">
+
+                    <div class="expertise-icon">+</div>
+
+                    <h3>Hormonal Disorders</h3>
+
+                    <p>
+                        Evaluation of disorders involving adrenal,
+                        pituitary, reproductive and other endocrine hormones.
+                    </p>
+
+                </div>
+
+
+                <div class="expertise-card">
+
+                    <div class="expertise-icon">⌁</div>
+
+                    <h3>Bone & Calcium Health</h3>
+
+                    <p>
+                        Assessment of osteoporosis, calcium disorders,
+                        vitamin D abnormalities and related endocrine
+                        conditions.
+                    </p>
+
+                </div>
+
+
+                <div class="expertise-card">
+
+                    <div class="expertise-icon">∞</div>
+
+                    <h3>Metabolic Health</h3>
+
+                    <p>
+                        Comprehensive care for metabolic syndrome,
+                        dyslipidaemia and other cardiometabolic risk factors.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONDITIONS
+    ========================== -->
+
+    <section class="conditions">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">
+                    Conditions We Manage
+                </div>
+
+                <h2>
+                    Specialist evaluation for a wide range of conditions.
+                </h2>
+
+                <p>
+                    Each consultation begins with understanding your symptoms,
+                    medical history and individual health goals.
+                </p>
+
+            </div>
+
+
+            <div class="conditions-grid">
+
+                <div class="condition">
+                    <span>01</span>
+                    <h3>Type 1 Diabetes</h3>
+                </div>
+
+                <div class="condition">
+                    <span>02</span>
+                    <h3>Type 2 Diabetes</h3>
+                </div>
+
+                <div class="condition">
+                    <span>03</span>
+                    <h3>Thyroid Disease</h3>
+                </div>
+
+                <div class="condition">
+                    <span>04</span>
+                    <h3>Thyroid Nodules</h3>
+                </div>
+
+                <div class="condition">
+                    <span>05</span>
+                    <h3>PCOS</h3>
+                </div>
+
+                <div class="condition">
+                    <span>06</span>
+                    <h3>Obesity</h3>
+                </div>
+
+                <div class="condition">
+                    <span>07</span>
+                    <h3>Osteoporosis</h3>
+                </div>
+
+                <div class="condition">
+                    <span>08</span>
+                    <h3>Adrenal Disorders</h3>
+                </div>
+
+                <div class="condition">
+                    <span>09</span>
+                    <h3>Pituitary Disorders</h3>
+                </div>
+
+                <div class="condition">
+                    <span>10</span>
+                    <h3>Metabolic Syndrome</h3>
+                </div>
+
+                <div class="condition">
+                    <span>11</span>
+                    <h3>Calcium Disorders</h3>
+                </div>
+
+                <div class="condition">
+                    <span>12</span>
+                    <h3>Hormonal Imbalances</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section class="services" id="services">
+
+        <div class="container">
+
+            <div class="section-heading center">
+
+                <div class="eyebrow">
+                    Clinical Services
+                </div>
+
+                <h2>
+                    Thoughtful care from diagnosis to follow-up.
+                </h2>
+
+            </div>
+
+
+            <div class="services-grid">
+
+                <div class="service">
+
+                    <div class="service-number">01</div>
+
+                    <div>
+
+                        <h3>Initial Consultation</h3>
+
+                        <p>
+                            A detailed assessment of symptoms, medical history,
+                            medications and relevant investigations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-number">02</div>
+
+                    <div>
+
+                        <h3>Diabetes Review</h3>
+
+                        <p>
+                            Review of glucose control, medications,
+                            lifestyle factors and diabetes-related risks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-number">03</div>
+
+                    <div>
+
+                        <h3>Thyroid Assessment</h3>
+
+                        <p>
+                            Clinical assessment and interpretation of thyroid
+                            function tests and related investigations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-number">04</div>
+
+                    <div>
+
+                        <h3>Metabolic Health Review</h3>
+
+                        <p>
+                            Assessment of weight, blood pressure, lipids,
+                            glucose and other cardiometabolic factors.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESEARCH
+    ========================== -->
+    <!-- ================= HERO ================= -->
+
+<section id="research" class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="eyebrow light">
+            RESEARCH & ACADEMIC WORK
+        </span>
+
+        <h1>
+            Publications & Research
+        </h1>
+
+        <p>
+            Advancing endocrine health through evidence-based
+            research, innovation, and better patient outcomes.
+        </p>
+
+
+        <div class="publication-count">
+
+            <div class="document-icon">
+                ▤
+            </div>
+
+            <div>
+                <strong>42</strong>
+                <span>Peer-reviewed publications</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESEARCH PROFILE ================= -->
+
+<section class="research-profile">
+
+   
+
+    <div class="research-text">
+
+        <span class="eyebrow">
+            ACADEMIC PROFILE
+        </span>
 
         <h2>
-            Ready for something delicious?
+            Research in Endocrinology
         </h2>
 
         <p>
-            Browse our menu and place your order today.
+            My research focuses on the prevention and treatment of
+            metabolic disorders, including diabetes, thyroid disease,
+            and obesity. I am passionate about translating scientific
+            discoveries into practical solutions that improve
+            long-term health and quality of life.
         </p>
 
-        <a
+
+        <div class="research-topics">
+
+            <div class="topic">
+
+                <div class="topic-icon">
+                    ◉
+                </div>
+
+                <div>
+                    <h4>Metabolic Disorders</h4>
+
+                    <p>
+                        Diabetes, obesity, insulin resistance
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <div class="topic-icon">
+                    ♡
+                </div>
+
+                <div>
+                    <h4>Thyroid Health</h4>
+
+                    <p>
+                        Hypothyroidism, hyperthyroidism, nodules
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <div class="topic-icon">
+                    ◎
+                </div>
+
+                <div>
+                    <h4>Patient-Centered Care</h4>
+
+                    <p>
+                        Evidence-based, personalized treatment plans
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= PUBLICATIONS ================= -->
+
+<section class="publications">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                ALL PUBLICATIONS
+            </span>
+
+            <h2>
+                Research Publications
+            </h2>
+
+            <p>
+                Explore my published work in peer-reviewed journals,
+                covering a range of topics in endocrinology,
+                diabetes, and metabolic health.
+            </p>
+
+        </div>
+
+
+
+
+
+
+
+    <!-- PUBLICATION LIST -->
+
+    <div id="publicationList">
+
+
+        
+
+        <article
+            class="publication"
             
+            data-category="Clinical Research"
+        >
+
+            
+            <div class="publication-info">
+
+                <h3>
+                 Click the button below to view all my research publications   
+                </h3>
+           </div>
+           <a href="https://scholar.google.com/citations?user=bXi7e9UAAAAJ&hl=en" target="_blank">
+            <button
+                class="arrow-btn"
+                onclick="openAbstract(1)"
+            >
+                View My Research Publications
+            </button>
+            </a>
+
+        </article>
+     </div>
+
+</section>
+
+
+    
+
+
+    <!-- =========================
+         TESTIMONIALS
+    ========================== -->
+
+    <section class="testimonials">
+
+        <div class="container">
+
+            <div class="section-heading center">
+
+                <div class="eyebrow">
+                    Patient Experience
+                </div>
+
+                <h2>
+                    Care that listens.
+                </h2>
+
+            </div>
+
+
+            <div class="testimonial-grid">
+
+                <div class="testimonial">
+
+                    <div class="stars">★★★★★</div>
+
+                    <p>
+                        "The consultation was thorough and easy to understand.
+                        I appreciated how clearly everything was explained."
+                    </p>
+
+                    <div class="patient">
+                        — Patient, Abuja
+                    </div>
+
+                </div>
+
+
+                <div class="testimonial">
+
+                    <div class="stars">★★★★★</div>
+
+                    <p>
+                        "I felt listened to throughout my appointment.
+                        The treatment plan was explained step by step."
+                    </p>
+
+                    <div class="patient">
+                        — Patient, Abuja
+                    </div>
+
+                </div>
+
+
+                <div class="testimonial">
+
+                    <div class="stars">★★★★★</div>
+
+                    <p>
+                        "The follow-up care made a real difference to how
+                        confident I felt managing my condition."
+                    </p>
+
+                    <div class="patient">
+                        — Patient, Abuja
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         APPOINTMENT
+    ========================== -->
+
+    <section class="appointment" id="appointment">
+
+        <div class="container">
+
+            <div class="appointment-grid">
+
+                <div class="appointment-text">
+
+                    <div class="eyebrow">
+                        Appointments
+                    </div>
+
+                    <h2>
+                        Take the next step towards better endocrine health.
+                    </h2>
+
+                    <p>
+                        Request an appointment and our clinic team will
+                        contact you to confirm an available consultation time.
+                    </p>
+
+
+                    <div class="contact-mini">
+
+                        <div>
+                            ☎ &nbsp; +234 703 640 0028
+                        </div>
+
+                        <div>
+                            ✉ &nbsp; lawalyaqub2006@yahoo.com
+                        </div>
+
+                        <div>
+                            📍 &nbsp; Gwagwalada, Abuja, Nigeria
+                        </div>
+
+                    </div>
+
+                </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">
+                    Contact
+                </div>
+
+                <h2>
+                    We are here to help.
+                </h2>
+
+                <p>
+                    Contact the clinic for appointments, enquiries and
+                    additional information.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+                <div>
+
+                    <div class="contact-box">
+
+                        <strong>Clinic Address</strong>
+
+                        <span>
+                            Gwagwalada teaching hospital,
+                            Abuja, Nigeria
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-box">
+
+                        <strong>Phone</strong>
+
+                        <span>
+                            +234 703 640 0028
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-box">
+
+                        <strong>Email</strong>
+
+                        <span>
+                            lawalyaqub2006@yahoo.com
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-box">
+
+                        <strong>Opening Hours</strong>
+
+                        <span>
+                            Monday – Friday · 9:00 AM – 5:00 PM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="map">
+
+                    <div>
+
+                        <h3>
+                            Abuja Clinic
+                        </h3>
+
+                        <p>
+                            Gwagwalada teaching hospital, Abuja
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <div class="logo">
+
+                        <div class="logo-symbol">
+                            YL
+                        </div>
+
+                        <div class="logo-text">
+
+                            <strong style="color:white;">
+                                Dr. Yakubu Lawal
+                            </strong>
+
+                            <span style="color:#8da7ab;">
+                                Consultant Endocrinologist
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <p style="margin-top:20px;">
+                        Specialist endocrine and metabolic care
+                        delivered with expertise, compassion and
+                        attention to each patient's individual needs.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+
+                        <li>
+                            <a href="#expertise">Expertise</a>
+                        </li>
+
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+
+                        <li>
+                            <a href="#research">Research</a>
+                        </li>
+
+                        <li>
+                            <a href="#appointment">Appointments</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Contact
+                    </h3>
+
+                    <p>
+                        +234 703 640 0028
+                    </p>
+
+                    <p>
+                        lawalyaqub2006@yahoo.com
+                    </p>
+
+                    <p>
+                        Gwagwalada, Abuja, Nigeria
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="copyright">
+
+                <span>
+                    © 2026 Dr. Yakubu Lawal. All rights reserved.
+                </span>
+
+                <span>
+                    Medical information on this website is for
+                    general educational purposes.
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- TOAST MESSAGE -->
+
+    <div class="toast" id="toast">
+        Your appointment request has been received.
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        // Mobile menu
+
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+
+        // Close mobile menu after clicking a link
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+
+            });
+
+        });
+
+
+        // Appointment form
+
+        const appointmentForm =
+            document.getElementById("appointmentForm");
+
+        const toast =
+            document.getElementById("toast");
+
+
+        appointmentForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            toast.classList.add("show");
+
+            appointmentForm.reset();
+
+            setTimeout(() => {
+
+                toast.classList.remove("show");
+
+            }, 4000);
+
+        });
+
+
+        // Prevent placeholder publication links from jumping
+
+        document.querySelectorAll(".read-more").forEach(link => {
+
+            link.addEventListener("click", function(event) {
+
+                event.preventDefault();
+
+                alert(
+                    "This publication page can be connected to the doctor's actual research profile."
+                );
+
+            });
+
+        });
+        /* =========================
+   PUBLICATION FILTER
+========================= */
+
+function filterPublications() {
+
+    const search =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const category =
+        document
+        .getElementById("categoryFilter")
+        .value;
+
+    const year =
+        document
+        .getElementById("yearFilter")
+        .value;
+
+
+    const publications =
+        document.querySelectorAll(".publication");
+
+
+    publications.forEach(function(publication) {
+
+        const text =
+            publication.innerText.toLowerCase();
+
+        const publicationYear =
+            publication.dataset.year;
+
+        const publicationCategory =
+            publication.dataset.category;
+
+
+        const matchesSearch =
+            text.includes(search);
+
+        const matchesCategory =
+            category === "all" ||
+            publicationCategory === category;
+
+        const matchesYear =
+            year === "all" ||
+            publicationYear === year;
+
+
+        if (
+            matchesSearch &&
+            matchesCategory &&
+            matchesYear
+        ) {
+
+            publication.classList.remove("hidden");
+
+        } else {
+
+            publication.classList.add("hidden");
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   ABSTRACT MODAL
+========================= */
+
+const abstracts = {
+
+    featured: {
+        title:
+            "The Impact of GLP-1 Receptor Agonists on Weight Loss and Metabolic Health in Type 2 Diabetes",
+
+        text:
+            "This research examines the long-term effects of GLP-1 receptor agonist therapy on weight management, glycemic control and selected cardiovascular risk factors among adults living with type 2 diabetes."
+    },
+
+
+    1: {
+        title:
+            "The Impact of GLP-1 Receptor Agonists on Weight Loss and Metabolic Health in Type 2 Diabetes",
+
+        text:
+            "This study evaluates changes in body weight, glycemic control and metabolic risk factors among patients receiving GLP-1 receptor agonist therapy."
+    },
+
+
+    2: {
+        title:
+            "Thyroid Nodule Management: A Systematic Review and Meta-Analysis",
+
+        text:
+            "This systematic review evaluates current approaches to thyroid nodule assessment and management, examining evidence from multiple clinical studies."
+    },
+
+
+    3: {
+        title:
+            "Lifestyle Intervention and Its Effect on Insulin Sensitivity in Prediabetic Patients",
+
+        text:
+            "This research examines how structured lifestyle interventions, including dietary modification and physical activity, may influence insulin sensitivity among adults with prediabetes."
+    },
+
+
+    4: {
+        title:
+            "Obesity and Cardiometabolic Risk: Long-Term Outcomes in Adults",
+
+        text:
+            "This study investigates associations between obesity and long-term cardiometabolic outcomes, highlighting the importance of individualized prevention and risk management."
+    }
+
+};
+
+
+function openAbstract(id) {
+
+    const publication =
+        abstracts[id];
+
+    if (!publication) return;
+
+
+    document.getElementById("modalTitle").innerText =
+        publication.title;
+
+
+    document.getElementById("modalText").innerText =
+        publication.text;
+
+
+    document
+        .getElementById("abstractModal")
+        .classList.add("show");
+
+}
+
+
+function closeAbstract() {
+
+    document
+        .getElementById("abstractModal")
+        .classList.remove("show");
+
+}
+
+
+/* =========================
+   CLOSE MODAL WHEN CLICKING
+   OUTSIDE
+========================= */
+
+window.addEventListener("click", function(event) {
+
+    const modal =
+        document.getElementById("abstractModal");
+
+    if (event.target === modal) {
+
+        closeAbstract();
+
+    }
+
+});
+
+    </script>
+
+</body>
+</html>
+            
+             
+           
